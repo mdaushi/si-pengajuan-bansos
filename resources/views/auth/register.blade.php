@@ -53,10 +53,11 @@
                     <div class="mb-3">
                         <label class="form-label">Password</label>
                         <div class="input-group input-group-flat">
-                            <input type="password" class="form-control" name="password" placeholder="Password"
-                                autocomplete="off">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password" autocomplete="off">
                             <span class="input-group-text">
-                                <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip">
+                                <a href="#" class="link-secondary" onclick="togglePassword()"
+                                    title="Show password" data-bs-toggle="tooltip">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/eye -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -73,10 +74,11 @@
                     <div class="mb-3">
                         <label class="form-label">Password Confirmation</label>
                         <div class="input-group input-group-flat">
-                            <input type="password" class="form-control" name="password_confirmation"
-                                placeholder="Password Confirmation" autocomplete="off">
+                            <input type="password" class="form-control" id="password_confirmation"
+                                name="password_confirmation" placeholder="Password Confirmation" autocomplete="off">
                             <span class="input-group-text">
-                                <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip">
+                                <a href="#" class="link-secondary" onclick="togglePasswordConfirmation()"
+                                    title="Show password" data-bs-toggle="tooltip">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/eye -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -103,6 +105,25 @@
     <!-- Libs JS -->
     <!-- Tabler Core -->
     <script src="{{ asset('./tabler/dist/js/tabler.min.js') }}"></script>
+    <script>
+        function togglePassword() {
+            var pass = document.getElementById("password")
+            if (pass.type === "password") {
+                pass.type = "text"
+            } else {
+                pass.type = "password"
+            }
+        }
+
+        function togglePasswordConfirmation() {
+            var pass = document.getElementById("password_confirmation")
+            if (pass.type === "password") {
+                pass.type = "text"
+            } else {
+                pass.type = "password"
+            }
+        }
+    </script>
     {{-- <script src="{{ asset("./dist/js/demo.min.js") }}"></script> --}}
 </body>
 

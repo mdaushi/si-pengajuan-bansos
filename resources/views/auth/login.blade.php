@@ -55,10 +55,11 @@
                 </span> --}}
                         </label>
                         <div class="input-group input-group-flat">
-                            <input type="password" class="form-control" name="password" placeholder="Password"
-                                autocomplete="off">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password" autocomplete="off">
                             <span class="input-group-text">
-                                <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip">
+                                <a href="#" onclick="showPassword()" class="link-secondary" title="Show password"
+                                    data-bs-toggle="tooltip">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/eye -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -92,6 +93,16 @@
     <!-- Libs JS -->
     <!-- Tabler Core -->
     <script src="{{ asset('./tabler/dist/js/tabler.min.js') }}"></script>
+    <script>
+        function showPassword() {
+            var pass = document.getElementById("password")
+            if (pass.type === "password") {
+                pass.type = "text"
+            } else {
+                pass.type = "password"
+            }
+        }
+    </script>
     {{-- <script src="./dist/js/demo.min.js"></script> --}}
 </body>
 
