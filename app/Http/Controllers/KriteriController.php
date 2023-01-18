@@ -50,4 +50,10 @@ class KriteriController extends Controller
 
         return redirect()->back()->with('success', 'Berhasil hapus Kriteria');
     }
+
+    public function user()
+    {
+        $datas = Kriteria::all();
+        return view('pages.kriteria.index', compact('datas'));
+    }
 }

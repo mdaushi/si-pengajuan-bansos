@@ -167,7 +167,7 @@
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Lihat</a>
+                                <a href="{{ route('kriteria.index') }}" class="btn btn-primary">Lihat</a>
                             </div>
                         </div>
                     </div>

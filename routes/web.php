@@ -36,6 +36,8 @@ Route::middleware(['auth'])->prefix("dashboard")->group(function () {
     Route::get("/pengaduan", [PengaduanController::class, "index"])->name("pengaduan.index");
     Route::post("/pengaduan", [PengaduanController::class, "store"])->name("pengaduan.store");
 
+    Route::get('kriteria', [KriteriController::class, 'user'])->name('kriteria.index');
+
     Route::prefix("admin")->group(function () {
         Route::get("pengajuan", [AdminPengajuanController::class, "index"])->name("admin.pengajuan.index");
         Route::get("pengajuan/{id}/aksi", [AdminPengajuanController::class, "aksi"])->name("admin.pengajuan.aksi");
