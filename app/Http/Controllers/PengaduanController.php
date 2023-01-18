@@ -28,4 +28,10 @@ class PengaduanController extends Controller
 
         return redirect()->back()->with('success', 'Aduan berhasil dikirim');
     }
+
+    public function admin()
+    {
+        $datas = Pengaduan::all();
+        return view("pages.admin.pengaduan.index", compact('datas'));
+    }
 }

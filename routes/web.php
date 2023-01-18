@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\admin\PengajuanController as AdminPengajuanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KriteriController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PengajuanController;
@@ -34,5 +36,19 @@ Route::middleware(['auth'])->prefix("dashboard")->group(function () {
     Route::get("/pengaduan", [PengaduanController::class, "index"])->name("pengaduan.index");
     Route::post("/pengaduan", [PengaduanController::class, "store"])->name("pengaduan.store");
 
-    
+    Route::prefix("admin")->group(function () {
+        Route::get("pengajuan", [AdminPengajuanController::class, "index"])->name("admin.pengajuan.index");
+        Route::get("pengajuan/{id}/aksi", [AdminPengajuanController::class, "aksi"])->name("admin.pengajuan.aksi");
+
+        Route::get("penerima", [AdminPengajuanController::class, "penerima"])->name("admin.penerima.index");
+
+        Route::get("pengaduan", [PengaduanController::class, "admin"])->name("admin.pengaduan.index");
+
+        Route::get("tertolak", [AdminPengajuanController::class, "tertolak"])->name("admin.tertolak.index");
+
+        Route::get("kriteria", [KriteriController::class, "index"])->name('admin.kriteria.index');
+        Route::post("kriteria", [KriteriController::class, "store"])->name('admin.kriteria.store');
+        Route::put("kriteria/{id}", [KriteriController::class, "update"])->name('admin.kriteria.update');
+        Route::delete("kriteria/{id}", [KriteriController::class, "delete"])->name('admin.kriteria.delete');
+    });
 });

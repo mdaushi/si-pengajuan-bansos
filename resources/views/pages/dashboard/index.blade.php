@@ -65,7 +65,7 @@
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Lihat</a>
+                                <a href="{{ route('admin.pengajuan.index') }}" class="btn btn-primary">Lihat</a>
                             </div>
                         </div>
                     </div>
@@ -77,19 +77,46 @@
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Lihat</a>
+                                <a href="{{ route('admin.penerima.index') }}" class="btn btn-primary">Lihat</a>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6 col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title">Data Pengajuan</h3>
-                                <p class="text-muted">Daftar komplain/pengajuan masyarakat</p>
+                                <h3 class="card-title">Pengajuan yang tertolak</h3>
+                                <p class="text-muted">Daftar Pengajuan Bansos yang tertolak</p>
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Lihat</a>
+                                <a href="{{ route('admin.tertolak.index') }}" class="btn btn-primary">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Data Pengaduan</h3>
+                                <p class="text-muted">Daftar komplain/pengaduan masyarakat</p>
+                            </div>
+                            <!-- Card footer -->
+                            <div class="card-footer">
+                                <a href="{{ route('admin.pengaduan.index') }}" class="btn btn-primary">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Kriteria</h3>
+                                <p class="text-muted">Kriteria Penerima</p>
+                            </div>
+                            <!-- Card footer -->
+                            <div class="card-footer">
+                                <a href="{{ route('admin.kriteria.index') }}" class="btn btn-primary">Lihat</a>
                             </div>
                         </div>
                     </div>
