@@ -28,8 +28,12 @@
                 </button>
                 <h1 class="navbar-brand navbar-brand-autodark">
                     <a href="/dashboard">
-                        <img src="{{ asset('img/jeneponto.png') }}" width="110" height="32" alt="Tabler"
-                            class="navbar-brand-image">
+                        {{-- brand desktop --}}
+                        <img src="{{ asset('img/jeneponto.png') }}" width="100" height="100" alt="Tabler"
+                            class="d-none d-md-none d-lg-block">
+                        {{-- brand mobile --}}
+                        <img src="{{ asset('img/jeneponto.png') }}" width="100" height="100" alt="Tabler"
+                        class="navbar-brand-image d-xl-none d-lg-none d-xl-block">
                     </a>
                 </h1>
                 <div class="navbar-nav flex-row d-lg-none">
