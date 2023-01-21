@@ -48,7 +48,7 @@ class PengajuanController extends Controller
     public function check()
     {
         $user = Masyarakat::where('user_id', Auth::user()->id)->first();
-        $pengajuan = Pengajuan::where('masyarakat_id', $user->id ?? null)->where('status', 'proses')->first();
+        $pengajuan = Pengajuan::where('masyarakat_id', $user->id ?? null)->first();
         return view("pages.pengajuan.status", compact('pengajuan'));
     }
 }
