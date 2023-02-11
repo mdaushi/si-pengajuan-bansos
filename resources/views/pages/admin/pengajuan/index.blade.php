@@ -128,13 +128,53 @@
                                                 href="{{ route('admin.pengajuan.aksi', [$data->id, 'aksi' => 'tolak']) }}"
                                                 class="btn btn-pill btn-danger w-100">
                                                 Tolak
-                                            </a></td>
+                                            </a>
+                                            </a>
+                                            <a href="#" class="btn btn-pill btn-warning w-100" data-bs-toggle="modal"
+                                                data-bs-target="#modal-large">
+                                                Analisis Pengajuan
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
 
                             </tbody>
                         </table>
+                        <div class="modal modal-blur fade" id="modal-large" tabindex="-1" role="dialog"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Analisis Kelayakan</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="list-group list-group-flush">
+                                            @foreach ($kriteria as $kr)
+                                                <div class="list-group-item">
+                                                    <div class="row align-items-center">
+                                                        <div class="col text-truncate">
+                                                            <span href=""
+                                                                class="text-reset d-block text-uppercase">{{ $kr->key }}</span>
+                                                            <div class="d-block text-muted text-truncate mt-n1">
+                                                                {{ $kr->value }}</div>
+                                                        </div>
 
+                                                        @if (isset($data->analisis[$kr->key]))
+                                                            <span class="badge bg-blue">Terpenuhi</span>
+                                                        @else
+                                                            <span class="badge bg-red">Tidak Terpenuhi</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

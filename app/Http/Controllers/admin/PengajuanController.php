@@ -3,15 +3,36 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kriteria;
 use App\Models\Pengajuan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PengajuanController extends Controller
 {
     public function index()
     {
-        $datas = Pengajuan::where('status', 'proses')->get();
-        return view('pages.admin.pengajuan.index', compact('datas'));
+        $kriteria = Kriteria::all();
+        $datas = Pengajuan::with('masyarakat')->where('status', 'proses')->get();
+        $datas->map(function($data) use(&$kriteria){
+            $analisis = [];
+            if($data->masyarakat->kewarganegaraan == 'WNI') {
+                $analisis['kewarganegaraan'] = true;
+            }
+            if($data->masyarakat->pekerjaan == 'nonasn') {
+                $analisis['pekerjaan'] = true; 
+            }
+            if($data->masyarakat->pendapatan == 'kurang') {
+                $analisis['pendapatan'] = true;
+            }
+
+            if(Carbon::parse($data->masyarakat->tanggal_lahir)->age > 60){
+                $analisis['umur'] = true;
+                
+            }
+            $data->analisis = $analisis;
+        });
+        return view('pages.admin.pengajuan.index', compact('datas', 'kriteria'));
     }
 
     public function aksi($id, Request $request)

@@ -16,20 +16,20 @@ class KriteriaSeeder extends Seeder
     {
         DB::table('kriteria')->insert([
             [
-                'key' => 'WNI',
-                'value' => ''
+                'key' => 'kewarganegaraan',
+                'value' => 'WNI'
             ],
             [
-                'key' => 'Lansia',
-                'value' => ''
+                'key' => 'umur',
+                'value' => 'Lansia'
             ],
             [
-                'key' => 'Pendapatan < Rp. 300.000 / bulan',
-                'value' => ''
+                'key' => 'pendapatan',
+                'value' => 'Pendapatan < Rp. 300.000 / bulan'
             ],
             [
-                'key' => 'Non ASN, TNI atau POLRI', 
-                'value' => ''
+                'key' => 'pekerjaan', 
+                'value' => 'Non ASN, TNI atau POLRI'
             ]
         ]);
     }
