@@ -65,7 +65,7 @@
 
                     @if (session('error'))
                         <div class="alert alert-danger" role="alert">
-                            <h4 class="alert-title">Error!</h4>
+                            {{-- <h4 class="alert-title">Sukses!</h4> --}}
                             <div class="text-muted">{{ session('error') }}</div>
                         </div>
                     @endif
@@ -125,7 +125,7 @@
                                                 class="btn btn-pill btn-primary w-100">
                                                 Terima
                                             </a><a
-                                                href="{{ route('admin.pengajuan.aksi', [$data->id, 'aksi' => 'tolak']) }}"
+                                                href="{{ route('admin.pengajuan.aksi', [$data->id, 'aksi' => 'tolak', 'analisis' => $data->analisis]) }}"
                                                 class="btn btn-pill btn-danger w-100">
                                                 Tolak
                                             </a>

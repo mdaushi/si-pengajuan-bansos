@@ -141,6 +141,13 @@
                         </div>
                     </div>
                 </div>
+                @if ($pengajuan->ket)
+                    @foreach ($pengajuan->ket as $ket)
+                        <div class="alert alert-danger mt-2" role="alert">
+                            {{ $ket }} tidak terpenuhi
+                        </div>
+                    @endforeach
+                @endif
             @endif
         </div>
     </div>

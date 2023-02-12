@@ -37,9 +37,20 @@ class PengajuanController extends Controller
 
     public function aksi($id, Request $request)
     {
+        $kriteria = Kriteria::all();
         $aksi = $request->aksi;
+        $analisis = $request->analisis;
+        $alasan = collect();
+        if($aksi == 'tolak') {
+            foreach ($kriteria as $kr) {
+                if(!isset($analisis[$kr->key])){
+                    $alasan->push($kr->key);
+                }
+            }
+        }
+
         try {
-            Pengajuan::where('id', $id)->first()->update(['status' => $aksi]);
+            Pengajuan::where('id', $id)->first()->update(['status' => $aksi, 'ket' => $alasan]);
             
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());

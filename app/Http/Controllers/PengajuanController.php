@@ -49,6 +49,7 @@ class PengajuanController extends Controller
     {
         $user = Masyarakat::where('user_id', Auth::user()->id)->first();
         $pengajuan = Pengajuan::where('masyarakat_id', $user->id ?? null)->first();
+        $pengajuan->ket = json_decode($pengajuan->ket);
         return view("pages.pengajuan.status", compact('pengajuan'));
     }
 }
