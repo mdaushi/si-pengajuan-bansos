@@ -94,10 +94,12 @@
                                     <div class="mb-3">
                                         <div class="form-label">Kewarganegaraan</div>
                                         <select class="form-select" name="kewarganegaraan">
-                                            <option value="WNI" {{ $data->kewarganegaraan == 'WNI' ? 'selected' : '' }}>
+                                            <option value="WNI"
+                                                {{ isset($data->kewarganegaraan) ? ($data->kewarganegaraan == 'WNI' ? 'selected' : '') : '' }}>
                                                 Warna Negara Indonesia
                                             </option>
-                                            <option value="WNA" {{ $data->kewarganegaraan == 'WNA' ? 'selected' : '' }}>
+                                            <option value="WNA"
+                                                {{ isset($data->kewarganegaraan) ? ($data->kewarganegaraan == 'WNA' ? 'selected' : '') : '' }}>
                                                 Warga Negara Asing</option>
                                         </select>
                                     </div>
@@ -107,9 +109,12 @@
                                     <div class="mb-3">
                                         <div class="form-label">Pendapatan perbulan</div>
                                         <select class="form-select" name="pendapatan">
-                                            <option value="kurang" {{ $data->pendapatan == 'kurang' ? 'selected' : '' }}>
+                                            <option value="kurang"
+                                                {{ isset($data->pendapatan) ? ($data->pendapatan == 'kurang' ? 'selected' : '') : '' }}>
                                                 < Rp. 300.000,- / bulan</option>
-                                            <option value="lebih" {{ $data->pendapatan == 'lebih' ? 'selected' : '' }}>>
+                                            <option value="lebih"
+                                                {{ isset($data->pendapatan) ? ($data->pendapatan == 'lebih' ? 'selected' : '') : '' }}>
+                                                >
                                                 Rp. 300.000,- / bulan</option>
                                         </select>
                                     </div>
@@ -119,9 +124,11 @@
                                     <div class="mb-3">
                                         <div class="form-label">Pekerjaan</div>
                                         <select class="form-select" name="pekerjaan">
-                                            <option value="asn" {{ $data->pekerjaan == 'asn' ? 'selected' : '' }}>
+                                            <option value="asn"
+                                                {{ isset($data->pekerjaan) ? ($data->pekerjaan == 'asn' ? 'selected' : '') : '' }}>
                                                 APARATUR SIPIL NEGARA</option>
-                                            <option value="nonasn" {{ $data->pekerjaan == 'nonasn' ? 'selected' : '' }}>
+                                            <option value="nonasn"
+                                                {{ isset($data->pekerjaan) ? ($data->pekerjaan == 'nonasn' ? 'selected' : '') : '' }}>
                                                 NON ASN</option>
                                         </select>
                                     </div>
