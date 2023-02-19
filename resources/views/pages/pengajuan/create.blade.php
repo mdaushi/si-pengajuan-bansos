@@ -84,13 +84,13 @@
                             <div class="mb-3">
                                 <label class="form-label required">NIK</label>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="NIK" name="nik">
+                                    <input type="number" class="form-control" placeholder="NIK" name="nik">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">No KK</label>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Nama" name="no_kk">
+                                    <input type="number" class="form-control" placeholder="Nama" name="no_kk">
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -108,7 +108,7 @@
                             <div class="mb-3">
                                 <label class="form-label required">Penghasilan</label>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="1000000" name="penghasilan">
+                                    <input type="number" class="form-control" placeholder="1000000" name="penghasilan">
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -123,6 +123,13 @@
                                 <div>
                                     <input type="text" class="form-control" placeholder="Pekerjaan Kepala Keluarga"
                                         name="pekerjaan_kepala_keluarga">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Penghasilan Kepala Keluarga</label>
+                                <div>
+                                    <input type="number" class="form-control" placeholder="Rp. "
+                                        name="penghasilan_kepala_keluarga">
                                 </div>
                             </div>
                             <div class="mb-3">

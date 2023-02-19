@@ -12,6 +12,9 @@ class Pengajuan extends Model
     use HasFactory;
     protected $table = "pengajuan";
     protected $guarded = [];
+    protected $casts = [
+        'penghasilan' => 'integer'
+    ];
 
     /**
      * Get the user associated with the Pengajuan

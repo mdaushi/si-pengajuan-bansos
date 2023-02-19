@@ -32,6 +32,7 @@ class PengajuanController extends Controller
             }
             $data->analisis = $analisis;
         });
+        $datas = $datas->sortBy('penghasilan')->values()->all();
         return view('pages.admin.pengajuan.index', compact('datas', 'kriteria'));
     }
 
