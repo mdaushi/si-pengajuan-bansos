@@ -75,18 +75,25 @@
                             @endif
                             <h3 class="card-title">Edit Data Diri</h3>
                             <div class="row row-cards">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label">Nama Lengkap</label>
                                         <input type="text" class="form-control" placeholder="Nama Lengkap"
                                             name="nama_lengkap" value="{{ $data->nama_lengkap ?? '' }}">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label">Email</label>
                                         <input type="email" class="form-control" placeholder="email" name="email"
                                             value="{{ $email ?? '' }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">NO KK</label>
+                                        <input required type="number" class="form-control" placeholder="NO KK"
+                                            name="no_kk" value="{{ $data->no_kk ?? '' }}">
                                     </div>
                                 </div>
 

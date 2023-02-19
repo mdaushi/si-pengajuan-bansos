@@ -130,7 +130,8 @@
                                                 Tolak
                                             </a>
                                             </a>
-                                            <a href="#" class="btn btn-pill btn-warning w-100" data-bs-toggle="modal"
+                                            <a onclick="analisis({{ $data }}, {{ $kriteria }})" href="#"
+                                                class="btn btn-pill btn-warning w-100" data-bs-toggle="modal"
                                                 data-bs-target="#modal-large">
                                                 Analisis Pengajuan
                                             </a>
@@ -151,6 +152,9 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="list-group list-group-flush">
+                                            <div id="kewarganegaraan">
+
+                                            </div>
                                             @foreach ($kriteria as $kr)
                                                 <div class="list-group-item">
                                                     <div class="row align-items-center">
@@ -160,12 +164,10 @@
                                                             <div class="d-block text-muted text-truncate mt-n1">
                                                                 {{ $kr->value }}</div>
                                                         </div>
-
-                                                        @if (isset($data->analisis[$kr->key]))
-                                                            <span class="badge bg-blue">Terpenuhi</span>
-                                                        @else
-                                                            <span class="badge bg-red">Tidak Terpenuhi</span>
-                                                        @endif
+                                                        <span id="{{ $kr->key }}-is"
+                                                            class="badge bg-blue">Terpenuhi</span>
+                                                        <span id="{{ $kr->key }}-non" class="badge bg-red">Tidak
+                                                            Terpenuhi</span>
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -192,5 +194,19 @@
                 valueNames: ['sort-nama', 'sort-nik', 'sort-no_kk', 'sort-domisili', 'sort-pekerjaan']
             });
         })
+
+        function analisis(data, kriteria) {
+            kriteria.forEach(element => {
+                if (data.analisis[element.key]) {
+                    document.getElementById(element.key + '-is').style.display = "block";
+                    document.getElementById(element.key + '-non').style.display = "none";
+
+                } else {
+                    console.log('non');
+                    document.getElementById(element.key + '-is').style.display = "none";
+                    document.getElementById(element.key + '-non').style.display = "block";
+                }
+            });
+        }
     </script>
 @endpush

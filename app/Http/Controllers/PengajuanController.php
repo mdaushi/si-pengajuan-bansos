@@ -16,12 +16,17 @@ class PengajuanController extends Controller
         if(!$existsUser){
             return view("pages.pengajuan.index", ['data' => 'user']);
         }
+
         
         $existsPengajuan = Pengajuan::where('masyarakat_id', $existsUser->id)->first();
         if($existsPengajuan){
             return view("pages.pengajuan.index", ['data' => 'pengajuan']);
         }
-
+        
+        $existsKK = Pengajuan::whereRelation('masyarakat','no_kk', $existsUser->no_kk)->first();
+        if($existsKK){
+            return view("pages.pengajuan.index", ['data' => 'double']);
+        }
         return view("pages.pengajuan.create");
     }
 

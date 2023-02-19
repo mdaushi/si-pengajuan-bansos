@@ -77,6 +77,13 @@
                         </a>
                     </div>
                 </div>
+            @elseif($data == 'double')
+                <div class="empty">
+                    <p class="empty-title">Pengajuan tidak dibolehkan</p>
+                    <p class="empty-subtitle text-muted">
+                        Salah satu anggota keluarga anda telah melakukan pengajuan.
+                    </p>
+                </div>
             @else
                 <div class="empty">
                     <p class="empty-title">Pengajuan telah dilakukan!</p>
