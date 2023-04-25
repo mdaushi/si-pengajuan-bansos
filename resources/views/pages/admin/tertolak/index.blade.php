@@ -103,7 +103,12 @@
                                         <td><a href="{{ route('admin.pengajuan.aksi', [$data->id, 'aksi' => 'proses']) }}"
                                                 class="btn btn-pill btn-warning w-100">
                                                 Proses Kembali
-                                            </a></td>
+                                            </a>
+                                            <a href="{{ route('admin.pengajuan.exports', ['type' => 'person', 'id' => $data->id]) }}"
+                                                class="btn btn-pill btn-white w-100" target="_blank">
+                                                Export
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
 

@@ -82,6 +82,7 @@
                                             Tanggungan</button></th>
                                     <th><button class="table-sort" data-sort="sort-jumlah_anggota_keluarga">Jumlah Anggota
                                             Keluarga</button></th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="table-tbody list">
@@ -99,6 +100,10 @@
                                         </td>
                                         <td class="sort-jumlah_tanggungan">{{ $data->jumlah_tanggungan }}</td>
                                         <td class="sort-jumlah_anggota_keluarga">{{ $data->jumlah_anggota_keluarga }}</td>
+                                        <td><a href="{{ route('admin.pengajuan.exports', ['type' => 'person', 'id' => $data->id]) }}"
+                                                class="btn btn-pill btn-white w-100" target="_blank">
+                                                Export
+                                            </a></td>
                                     </tr>
                                 @endforeach
 

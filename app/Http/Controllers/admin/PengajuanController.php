@@ -102,6 +102,10 @@ class PengajuanController extends Controller
                 $heading = 'Pengajuan Tertolak';
                 $datas = Pengajuan::where('status', 'tolak')->get();
                 break;
+            case 'person':
+                    $heading = 'Data Diri Pengaju';
+                    $datas = Pengajuan::where('id', $request->id)->get();
+                    break;
             default:
                 $heading = '....';
                 break;
