@@ -95,15 +95,24 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Domisili</label>
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Domisili" name="domisili">
-                                </div>
+                                <select class="form-select" name="domisili">
+                                    <option value="jombe utara">Jombe Utara</option>
+                                    <option value="jombe tengah">Jombe Tengah</option>
+                                    <option value="jombe selatan">Jombe Selatan</option>
+                                    <option value="tompo balang">Tompo Balang</option>
+                                    <option value="muncu-muncu">muncu-muncu</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Pekerjaan</label>
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Pekerjaan" name="pekerjaan">
-                                </div>
+                                <select class="form-select" name="pekerjaan">
+                                    <option value="petani">Petani</option>
+                                    <option value="tidak bekerja">Tidak Bekerja</option>
+                                    <option value="pns/aparatur negara">PNS/aparatur Negara</option>
+                                    <option value="wiraswasta">Wiraswasta</option>
+                                    <option value="wirausaha">wirausaha</option>
+                                    <option value="lain-lain">Lain-lain</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Penghasilan</label>

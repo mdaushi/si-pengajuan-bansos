@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use App\Models\Kriteria;
 use App\Models\Pengajuan;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
+// use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class PengajuanController extends Controller
 {
-    public function index()
+    public function getDatas()
     {
         $kriteria = Kriteria::all();
         $datas = Pengajuan::with('masyarakat')->where('status', 'proses')->get();
-        $datas->map(function($data) use(&$kriteria){
+        $datas->map(function($data) use($kriteria){
             $analisis = [];
             if($data->masyarakat->kewarganegaraan == 'WNI') {
                 $analisis['kewarganegaraan'] = true;
@@ -33,6 +36,16 @@ class PengajuanController extends Controller
             $data->analisis = $analisis;
         });
         $datas = $datas->sortBy('penghasilan')->values()->all();
+        return [
+            'datas'  => $datas,
+            'kriteria' => $kriteria
+        ];
+    }
+
+    public function index()
+    {
+        $datas = $this->getDatas()['datas'];
+        $kriteria = $this->getDatas()['kriteria'];
         return view('pages.admin.pengajuan.index', compact('datas', 'kriteria'));
     }
 
@@ -71,4 +84,30 @@ class PengajuanController extends Controller
         $datas = Pengajuan::where('status', 'tolak')->get();
         return view('pages.admin.tertolak.index', compact('datas'));
     }
+
+    public function exports(Request $request)
+    {
+        $type = $request->type;
+        
+        switch ($type) {
+            case 'pengajuan':
+                $datas = $this->getDatas()['datas'];
+                $heading = 'Calon Penerima Bantuan';
+                break;
+            case 'penerima':
+                    $heading = 'Penerima Bantuan';
+                    $datas = Pengajuan::where('status', 'terima')->get();
+                    break;
+            case 'tertolak':
+                $heading = 'Pengajuan Tertolak';
+                $datas = Pengajuan::where('status', 'tolak')->get();
+                break;
+            default:
+                $heading = '....';
+                break;
+        }
+        $pdf = Pdf::loadView('pdf.lists', ['datas' => $datas, 'heading' => $heading]);
+        return $pdf->stream();
+    }
+
 }

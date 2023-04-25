@@ -52,5 +52,7 @@ Route::middleware(['auth'])->prefix("dashboard")->group(function () {
         Route::post("kriteria", [KriteriController::class, "store"])->name('admin.kriteria.store');
         Route::put("kriteria/{id}", [KriteriController::class, "update"])->name('admin.kriteria.update');
         Route::delete("kriteria/{id}", [KriteriController::class, "delete"])->name('admin.kriteria.delete');
+
+        Route::get('pengajuan/exports/{type?}', [AdminPengajuanController::class, "exports"])->name('admin.pengajuan.exports');
     });
 });

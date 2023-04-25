@@ -179,25 +179,79 @@
                                             value="{{ $data->alamat ?? '' }}">
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="col-sm-6 col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label">Kelurahan</label>
-                                        <input type="text" class="form-control" placeholder="Kelurahan"
-                                            value="{{ $data->kelurahan ?? '' }}" name="kelurahan">
+                                        <div class="form-label">Dusun</div>
+                                        <select class="form-select" name="kelurahan">
+                                            <option value="jombe utara"
+                                                {{ isset($data->kelurahan) ? ($data->kelurahan == 'jombe utara' ? 'selected' : '') : '' }}>
+                                                Jombe Utara</option>
+                                            <option value="jombe tengah"
+                                                {{ isset($data->kelurahan) ? ($data->kelurahan == 'jombe tengah' ? 'selected' : '') : '' }}>
+                                                Jombe Tengah</option>
+                                            <option value="jombe selatan"
+                                                {{ isset($data->kelurahan) ? ($data->kelurahan == 'jombe selatan' ? 'selected' : '') : '' }}>
+                                                Jombe Selatan</option>
+                                            <option value="tompo balang"
+                                                {{ isset($data->kelurahan) ? ($data->kelurahan == 'tompo balang' ? 'selected' : '') : '' }}>
+                                                Tompo Balang</option>
+                                            <option value="muncu-muncu"
+                                                {{ isset($data->kelurahan) ? ($data->kelurahan == 'muncu-muncu' ? 'selected' : '') : '' }}>
+                                                muncu-muncu</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-5">
+                                <div class="col-sm-6 col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label">Kecamatan</label>
-                                        <input type="text" class="form-control" placeholder="Kecamatan"
-                                            value="{{ $data->kecamatan ?? '' }}" name="kecamatan">
+                                        <select name="kecamatan" class="form-select">
+                                            <option value="turatea">Turatea</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-2">
                                     <div class="mb-3">
-                                        <label class="form-label">RT/RW</label>
-                                        <input type="text" class="form-control" placeholder="RT/RW" name="rtrw"
-                                            value="{{ $data->rtrw ?? '' }}">
+                                        <label class="form-label">RT</label>
+                                        <select class="form-select" name="rtrw">
+                                            <option value="RT 001"
+                                                {{ isset($data->rtrw) ? ($data->rtrw == 'RT 001' ? 'selected' : '') : '' }}>
+                                                RT 001</option>
+                                            <option value="RT 002"
+                                                {{ isset($data->rtrw) ? ($data->rtrw == 'RT 002' ? 'selected' : '') : '' }}>
+                                                RT 002</option>
+                                            <option value="RT 003"
+                                                {{ isset($data->rtrw) ? ($data->rtrw == 'RT 003' ? 'selected' : '') : '' }}>
+                                                RT 003</option>
+                                            <option value="RT 004"
+                                                {{ isset($data->rtrw) ? ($data->rtrw == 'RT 004' ? 'selected' : '') : '' }}>
+                                                RT 004</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-2">
+                                    <div class="mb-3">
+                                        <label class="form-label">RW</label>
+                                        <select class="form-select" name="rw">
+                                            <option value="RW 001"
+                                                {{ isset($data->rw) ? ($data->rw == 'RW 001' ? 'selected' : '') : '' }}>
+                                                RW 001</option>
+                                            <option value="RW 002"
+                                                {{ isset($data->rw) ? ($data->rw == 'RW 002' ? 'selected' : '') : '' }}>
+                                                RW 002</option>
+                                            <option value="RW 003"
+                                                {{ isset($data->rw) ? ($data->rw == 'RW 003' ? 'selected' : '') : '' }}>
+                                                RW 003</option>
+                                            <option value="RW 004"
+                                                {{ isset($data->rw) ? ($data->rw == 'RW 004' ? 'selected' : '') : '' }}>
+                                                RW 004</option>
+                                            <option value="RW 005"
+                                                {{ isset($data->rw) ? ($data->rw == 'RW 005' ? 'selected' : '') : '' }}>
+                                                RW 005</option>
+                                            <option value="RW 006"
+                                                {{ isset($data->rw) ? ($data->rw == 'RW 006' ? 'selected' : '') : '' }}>
+                                                RW 006</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
