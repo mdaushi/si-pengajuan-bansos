@@ -22,7 +22,7 @@
                         <span class="d-none d-sm-inline">
                             <a href="{{ route('admin.pengajuan.exports', ['type' => 'penerima']) }}" target="_blank"
                                 class="btn btn-white">
-                                Exports
+                                Print Semua
                             </a>
                         </span>
 
@@ -102,7 +102,7 @@
                                         <td class="sort-jumlah_anggota_keluarga">{{ $data->jumlah_anggota_keluarga }}</td>
                                         <td><a href="{{ route('admin.pengajuan.exports', ['type' => 'person', 'id' => $data->id]) }}"
                                                 class="btn btn-pill btn-white w-100" target="_blank">
-                                                Export
+                                                Cetak/Print
                                             </a></td>
                                     </tr>
                                 @endforeach

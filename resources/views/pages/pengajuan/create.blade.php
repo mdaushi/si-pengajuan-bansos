@@ -90,7 +90,7 @@
                             <div class="mb-3">
                                 <label class="form-label required">No KK</label>
                                 <div>
-                                    <input type="number" class="form-control" placeholder="Nama" name="no_kk">
+                                    <input type="number" class="form-control" placeholder="NO KK" name="no_kk">
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -129,10 +129,14 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Pekerjaan Kepala Keluarga</label>
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Pekerjaan Kepala Keluarga"
-                                        name="pekerjaan_kepala_keluarga">
-                                </div>
+                                <select class="form-select" name="pekerjaan_kepala_keluarga">
+                                    <option value="petani">Petani</option>
+                                    <option value="tidak bekerja">Tidak Bekerja</option>
+                                    <option value="pns/aparatur negara">PNS/aparatur Negara</option>
+                                    <option value="wiraswasta">Wiraswasta</option>
+                                    <option value="wirausaha">wirausaha</option>
+                                    <option value="lain-lain">Lain-lain</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Penghasilan Kepala Keluarga</label>

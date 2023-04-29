@@ -22,7 +22,7 @@
                         <span class="d-none d-sm-inline">
                             <a href="{{ route('admin.pengajuan.exports', ['type' => 'pengajuan']) }}" target="_blank"
                                 class="btn btn-white">
-                                Exports
+                                Print Semua
                             </a>
                         </span>
 
@@ -78,6 +78,9 @@
                                     <th><button class="table-sort" data-sort="sort-pekerjaan_kepala_keluarga">Pekerjaan
                                             Kepala
                                             Keluarga</button></th>
+                                    <th><button class="table-sort" data-sort="sort-penghasilan_kepala_keluarga">Penghasilan
+                                                Kepala
+                                                Keluarga</button></th>
                                     <th><button class="table-sort" data-sort="sort-jumlah_tanggungan">Jumlah
                                             Tanggungan</button></th>
                                     <th><button class="table-sort" data-sort="sort-jumlah_anggota_keluarga">Jumlah Anggota
@@ -98,6 +101,8 @@
                                         <td class="sort-nm_kepala_keluarga">{{ $data->nm_kepala_keluarga }}</td>
                                         <td class="sort-pekerjaan_kepala_keluarga">{{ $data->pekerjaan_kepala_keluarga }}
                                         </td>
+                                        <td class="sort-penghasilan_kepala_keluarga">{{ $data->penghasilan_kepala_keluarga }}
+                                        </td>
                                         <td class="sort-jumlah_tanggungan">{{ $data->jumlah_tanggungan }}</td>
                                         <td class="sort-jumlah_anggota_keluarga">{{ $data->jumlah_anggota_keluarga }}</td>
                                         <td><a href="{{ route('admin.pengajuan.aksi', [$data->id, 'aksi' => 'terima']) }}"
@@ -115,7 +120,7 @@
                                             </a>
                                             <a href="{{ route('admin.pengajuan.exports', ['type' => 'person', 'id' => $data->id]) }}"
                                                 class="btn btn-pill btn-white w-100" target="_blank">
-                                                Export
+                                                Cetak/Print
                                             </a>
                                         </td>
                                     </tr>
