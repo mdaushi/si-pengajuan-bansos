@@ -105,6 +105,8 @@ class PengajuanController extends Controller
             case 'person':
                     $heading = 'Data Diri Pengaju';
                     $datas = Pengajuan::where('id', $request->id)->get();
+                    $pdf = Pdf::loadView('pdf.person', ['datas' => $datas, 'heading' => $heading]);
+                    return $pdf->stream();
                     break;
             default:
                 $heading = '....';
